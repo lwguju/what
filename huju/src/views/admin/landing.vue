@@ -57,10 +57,11 @@
 
     async function handleAddSubmit() {
         try{
+            const footerLists=addForm.footerList.map(item=>item.url).join(',');
             const response =await axios.post(
                 'http://182.92.158.95:8020/api/form/add',
                     {
-                        "end_pic": addForm.footerList[0]?.url,
+                        "end_pic": footerLists||[],
                         "middle_pic": addForm.middleList[0]?.url,
                         "muban": addForm.muban,
                         "name": addForm.name,
@@ -277,6 +278,67 @@ const handleLogout = async () => {
     }
   }
 };
+
+
+
+// function Lw(name){
+//     this.name=name;
+//     console.log(`${this.name}`);
+// };//构造函数
+
+// const lw={};
+// Lw.call(lw,'guju');//值绑定this
+// lw.__proto__=Lw.prototype;
+
+function Lw(name){
+    this.name=name;
+    console.log(`${this.name}`);
+};//构造函数
+
+const lw={};
+Lw.call(lw,'gu');//值绑定this
+
+
+
+const arr=[1,2,3,4,5,6,7,8,9];
+const arr1=arr.slice(1,3);
+console.log(arr1);
+
+const arr2=[1,2,3,4,5,6,7,8,9];
+const arr3=arr2.splice(1,3,'lw','lj','lj','lj',);
+console.log(arr3);
+console.log(arr2);
+
+
+
+// function getData(callback) {
+//   setTimeout(() => {
+//     callback(null, "Data received!")
+//   }, 2000);
+// }
+// getData((err,data)=>{
+//     if(err){
+//         console.log("wrong",err);
+//     }else{
+//         console.log("success",data);
+//     }
+// })
+function getDataPromise(){
+    return new Promise((resolve,reject)=>{
+        getData((err,data)=>{
+            if(err){
+                reject(err);
+            }else{
+                resolve(data);
+            }
+        })
+    })
+}
+getDataPromise()
+    .then(data=>console.log("success",data))
+    .catch(err=>console.log("wrong",err));
+
+
 </script>
 
 <template>
@@ -409,10 +471,11 @@ const handleLogout = async () => {
                                         :on-success="(response,file)=>{
                                             console.log(`${response.data.url}`);
                                             file.url=response.data.url;
-                                           addForm.footerList = [file]; 
+                                           if(addForm.footerList.length<5)
+                                                addForm.footerList.push(file);
                                         }"
                                     >
-                                        <div v-if="addForm.footerList.length === 0" class="el-upload__icon">+</div>
+                                        <div v-if="addForm.footerList.length <=4" class="el-upload__icon">+</div>
                                     </el-upload>
                                     </el-form-item>
                           </el-form>
@@ -484,10 +547,11 @@ const handleLogout = async () => {
                                         :on-success="(response,file)=>{
                                             console.log(`${response.data.url}`);
                                             file.url=response.data.url;
-                                           addForm.footerList = [file]; 
+                                            if(addForm.footerList.length<5)
+                                                addForm.footerList.push(file);
                                         }"
                                     >
-                                        <div v-if="addForm.footerList.length === 0" class="el-upload__icon">+</div>
+                                        <div v-if="addForm.footerList.length <=4" class="el-upload__icon">+</div>
                                     </el-upload>
                                     </el-form-item>
                           </el-form>

@@ -1,0 +1,123 @@
+<view class="container">
+    <view class="bg-image" style="background-image: url({{landingUrl}});" wx:if="{{showBackground}}"></view>
+    <view class="overlay-buttons" wx:if="{{showBackground}}">
+        <button class="overlay-btn" bind:tap="gotoAd">学习资料</button>
+        <button class="overlay-btn" bind:tap="gotoLanding">近期活动</button>
+    </view>
+  <view class="question-card">
+    <swiper
+      class="question-swiper"
+      current="{{currentQ}}"
+      duration="300"
+      circular="{{false}}"
+      indicator-dots="true"
+    >
+      <!-- 学历问题 -->
+      <swiper-item>
+        <view class="academic">
+          <text>您的学历</text>
+          <button 
+            class="options {{answers[0] === '最高学历:硕士及以上;' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="最高学历:硕士及以上;"
+            data-q="0"
+          >硕士及以上</button>
+          <button 
+            class="options {{answers[0] === '最高学历:本科;' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="最高学历:本科;"
+            data-q="0"
+          >本科</button>
+          <button 
+            class="options {{answers[0] === '最高学历:专科无学位;' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="最高学历:专科无学位;"
+            data-q="0"
+          >专科</button>
+          <button 
+            class="options {{answers[0] === '最高学历:无学位;' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="最高学历:无学位;"
+            data-q="0"
+          >专科及以下</button>
+        </view>
+      </swiper-item>
+
+      <!-- 专业问题 -->
+      <swiper-item>
+        <view class="work-year">
+          <text>面向专业</text>
+          <button 
+            class="options {{answers[1] === '意向专业:MBA' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="意向专业:MBA"
+            data-q="1"
+          >MBA</button>
+          <button 
+            class="options {{answers[1] === '意向专业:人工智能' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="意向专业:人工智能"
+            data-q="1"
+          >人工智能</button>
+          <button 
+            class="options {{answers[1] === '意向专业:心理学' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="意向专业:心理学"
+            data-q="1"
+          >心理学</button>
+          <button 
+            class="options {{answers[1] === '意向专业:医疗健康' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="意向专业:医疗健康"
+            data-q="1"
+          >医疗健康</button>
+          <button 
+            class="options {{answers[1] === '意向专业:其他' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="意向专业:其他"
+            data-q="1"
+          >其他</button>
+        </view>
+      </swiper-item>
+
+      <!-- 学费预算 -->
+      <swiper-item>
+        <view class="intention">
+          <text>学费预算</text>
+          <button 
+            class="options {{answers[2] === '预算:5w以内' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="预算:5w以内"
+            data-q="2"
+          >5w以内</button>
+          <button 
+            class="options {{answers[2] === '预算:15w以内' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="预算:15w以内"
+            data-q="2"
+          >5-15w</button>
+          <button 
+            class="options {{answers[2] === '预算:30w以内' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="预算:30w以内"
+            data-q="2"
+          >16-30w</button>
+          <button 
+            class="options {{answers[2] === '预算:30w以上' ? 'selected' : ''}}" 
+            bindtap="chooose" 
+            data-ans="预算:30w以上"
+            data-q="2"
+          >30万以上</button>
+        </view>
+      </swiper-item>
+    </swiper>
+
+
+
+  </view>    
+  <button 
+    class="result" 
+    wx:if="{{answers.length === 3 && answers[0] && answers[1] && answers[2]}}"
+    bindtap="goto"
+    >查看结果</button>
+</view>

@@ -1,0 +1,79 @@
+<view>
+    <view class="firstImg">
+        <image src="{{img}}" mode="widthFix"/>
+    </view>
+    <view class="survey-section">
+  <!-- 标题部分 -->
+  <!-- <view class="survey-title">
+    <text class="title-text">测一测</text>
+    <text class="sub-title-text">你可以申请哪些院校？</text>
+    <text class="tip-text">（信息自动加密，请放心填写）</text>
+  </view> -->
+
+  <!-- 最高学历选择 -->
+  <view class="form-item">
+    <text class="label">*您的最高学历：</text>
+    <view class="option-group" bindtap="chooose">
+      <text class="option {{x[0]==='大专'?'selected':''}}" data-type="大专" >大专</text>
+      <text class="option {{x[0]==='本科无学位'?'selected':''}}" data-type="本科无学位">本科无学位</text>
+      <text class="option {{x[0]==='本科有学位'?'selected':''}}" data-type="本科有学位">本科有学位</text>
+      <text class="option {{x[0]==='硕士及以上'?'selected':''}}" data-type="硕士及以上">硕士及以上</text>
+    </view>
+  </view>
+
+  <!-- 毕业年限选择 -->
+  <view class="form-item">
+    <text class="label">*您的毕业年限：</text>
+    <view class="option-group" bind:tap="chooose">
+      <text class="option {{x[1]==='应届'?'selected':''}}" bindtap="selectGraduationYear" data-a="a" data-type="应届">应届</text>
+      <text class="option {{x[1]==='1-3年'?'selected':''}}" bindtap="selectGraduationYear"  data-a="a" data-type="1-3年">1-3年</text>
+      <text class="option {{x[1]==='4-10年'?'selected':''}}" bindtap="selectGraduationYear"  data-a="a" data-type="4-10年">4-10年</text>
+      <text class="option {{x[1]==='10年以上'?'selected':''}}" bindtap="selectGraduationYear"  data-a="a" data-type="10年以上">10年以上</text>
+    </view>
+  </view>
+
+  <!-- 电话 -->
+  <view class="form-group">
+  <!-- 姓名输入框 -->
+  <view class="input-item">
+    <input 
+      type="text" 
+      placeholder="*姓名" 
+      placeholder-class="placeholder-style"
+      bindinput="onNameInput"
+      value="{{userName}}" 
+    />
+  </view>
+
+
+  <view class="input-item phone-item">
+    <input 
+      type="number" 
+      placeholder="*手机号" 
+      placeholder-class="placeholder-style"
+      bindinput="onPhoneInput"
+      value="{{userPhone}}" 
+    />
+    <button class="auth-btn" bindtap="onAuthTap">一键授权</button>
+  </view>
+</view>
+
+
+  <!-- 提交按钮 -->
+  <view class="submit-btn" bindtap="scrollToResult">查看测试结果</view>
+
+  <!-- 提示文字 -->
+  <view class="tip">
+    *点击授权，默认允许获取您的手机号；信息已加密，保护您的隐私。
+    <text class="support-text">由腾讯官方提供授权技术支持。</text>
+  </view>
+</view>
+
+<view class="firstImg">
+        <image src="{{imgFoot[1]}}" mode="widthFix"/>
+        <image src="{{imgFoot[2]}}" class="x" mode="widthFix"/>
+        <image src="{{imgFoot[3]}}" mode="widthFix"/>
+        <image src="{{imgFoot[4]}}" mode="widthFix"/>
+
+    </view>
+</view>

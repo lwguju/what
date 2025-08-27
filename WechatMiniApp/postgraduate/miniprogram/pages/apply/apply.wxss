@@ -1,0 +1,160 @@
+/* pages/apply/apply.wxss */
+.firstImg{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+.firstImg image{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* test */
+
+.survey-section {
+    margin: 0 auto;
+    padding: 20rpx 70rpx;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #ffffff;
+  }
+  
+  /* 标题样式 */
+  .survey-title {
+    text-align: center;
+    margin-bottom: 40rpx;
+  }
+  
+  .title-text {
+    font-size: 48rpx;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10rpx;
+  }
+  
+  .sub-title-text {
+    font-size: 36rpx;
+    display: block;
+    margin-bottom: 10rpx;
+  }
+  
+  .tip-text {
+    font-size: 24rpx;
+    color: #999;
+  }
+  
+  /* 表单项样式 */
+  .form-item {
+    margin-bottom: 30rpx;
+  }
+  
+  .label {
+    font-size: 28rpx;
+    display: block;
+    margin-bottom: 15rpx;
+  }
+  
+  /* 选项组样式 */
+  .option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20rpx;
+  }
+  
+  .option {
+    border: 1px solid #ccc;
+    border-radius: 40rpx;
+    padding: 12rpx 0rpx;
+    font-size: 24rpx;
+    cursor: pointer;
+    width: calc(25% - 20rpx);
+    text-align: center;
+  }
+  
+  /* .option.selected {
+    background-color: #f0f0f0;
+    border-color: #000;
+  } */
+  
+
+  .submit-btn {
+
+    background-color: #ffb74d;
+    color: #fff;
+    text-align: center;
+    font-size: 32rpx;
+    padding: 20rpx;
+    border-radius: 25rpx;
+    margin: 40rpx auto;
+    cursor: pointer;
+    width: 400rpx;
+    height: 50rpx;
+  }
+  
+
+  .tip {
+    font-size: 24rpx;
+    color: #666;
+    text-align: center;
+    line-height: 1.5;
+  }
+  
+  .support-text {
+    display: block;
+    margin-top: 10rpx;
+    font-size: 22rpx;
+    color: #999;
+  }
+  .selected{
+    background-color: #4b79e4;
+}
+.form-group {
+    padding: 20rpx;
+  }
+  
+  .input-item {
+    display: flex;
+    align-items: center;
+    height: 80rpx;
+    border: 1px solid #e5e5e5;
+    border-radius: 40rpx;
+    margin-bottom: 20rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+  }
+  
+  .input-item input {
+    flex: 1;
+    font-size: 28rpx;
+  }
+  
+
+  .placeholder-style {
+    color: #999;
+    font-size: 24rpx;
+  }
+  
+
+  .phone-item {
+    position: relative;
+  }
+  
+
+  .auth-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 80rpx;
+    width: 200rpx !important;
+    background-color: #e5494d;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }

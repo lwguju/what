@@ -1,0 +1,62 @@
+<view class="container">
+
+<view class="banner">
+    <image src="{{landingUrl}}" 
+            alt=""
+            mode="widthFix"  
+            class="banner-img"
+            lazy-load 
+            style="width:100%"
+    />
+</view>
+
+<view class="top"
+      style="display: flex; justify-content: space-between;"
+>
+    <text>今日报名活动: 0{{xxx}}</text>
+    <text>今日可报名活动: 4 {{num}}</text>
+
+</view>
+
+<view class="pdf">
+    <view class="word {{pnum==1?className:''}}"
+          bindtap="gotoApply"
+    >
+       <view class="text-main">
+            <view class="yellow">活动</view>
+            <text style="font-weight: 300;font-size: 30rpx;">在职人士硕博提升</text>
+        </view>
+                <view class="more">  
+                    <text>更新时间: 2025-08-23</text>
+                </view>
+    </view>
+    <view class="word {{pnum==1?className:''}}"bindtap="gotoApply">
+       <view class="text-main">
+            <view class="yellow">活动</view>
+            <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+        </view>
+                <view class="more">  
+                    <text>更新时间: 2025-08-23</text>
+                </view>
+    </view>
+    <view class="word {{pnum==1?className:''}}"bindtap="gotoApply">
+       <view class="text-main">
+            <view class="yellow">活动</view>
+            <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+        </view>
+                <view class="more">  
+                    <text>更新时间: 2025-08-23</text>
+                </view>
+    </view>
+    <view class="word {{pnum==1?className:''}}"bindtap="gotoApply">
+       <view class="text-main">
+            <view class="yellow">活动</view>
+            <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+        </view>
+                <view class="more">  
+                    <text>更新时间: 2025-08-23</text>
+                </view>
+    </view>
+</view>
+
+</view>

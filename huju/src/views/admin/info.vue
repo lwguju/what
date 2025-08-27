@@ -280,15 +280,11 @@ const handleLogout = async () => {
     );
     localStorage.removeItem('token');
     router.push('/login'); 
-
-    // 4. 提示退出成功
     ElMessage.success('退出登录成功');
   } catch (error) {
-    // 如果用户取消退出，不做操作，仅提示
     if (error === 'cancel') {
       ElMessage.info('已取消退出');
     } else {
-      // 其他错误（如网络问题，实际退出登录本地操作一般不会有网络错误）
       ElMessage.error('退出失败，请重试');
     }
   }

@@ -1,0 +1,73 @@
+<view class="container">
+
+    <view class="banner">
+        <image src="{{adUrl}}" 
+                alt=""
+                mode="widthFix"  
+                class="banner-img"
+                lazy-load 
+                style="width:100%"
+        />
+    </view>
+
+    <view class="top"
+          style="display: flex; justify-content: space-between;"
+    >
+        <text>今日剩余解锁次数: {{xxx}}</text>
+        <text>查看解锁记录</text>
+    
+    </view>
+
+    <view class="pdf">
+        <view class="word {{pnum==1?className:''}}">
+           <view class="text-main">
+                <text style="font-weight: 400;font-size: 35rpx;">204英语二考研大纲\n</text>
+                <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+            </view>
+            <text class=" showPdf {{pnum==1?route:''}}" bindtap="showPdf" data-p="1">></text>
+                    <view class="more">  
+                        <text>管理类联考大纲</text>
+                        <button>解锁</button>
+                    </view>
+        </view>
+        <view class="word {{pnum==2?className:''}}">
+           <view class="text-main">
+                <text style="font-weight: 400;font-size: 35rpx;">204英语二考研大纲\n</text>
+                <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+            </view>
+            <text class=" showPdf {{pnum==2?route:''}}" bindtap="showPdf" data-p="2">></text>
+                    <view class="more">  
+                        <text>管理类联考大纲</text>
+                        <button>解锁</button>
+                    </view>
+        </view>
+        <view class="word {{pnum==3?className:''}}">
+           <view class="text-main">
+                <text style="font-weight: 400;font-size: 35rpx;">204英语二考研大纲\n</text>
+                <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+            </view>
+            <text class=" showPdf {{pnum==3?route:''}}" bindtap="showPdf" data-p="3">></text>
+                    <view class="more">  
+                        <text>管理类联考大纲</text>
+                        <button>解锁</button>
+                    </view>
+        </view>
+        <view class="word {{pnum==4?className:''}}">
+            <view class="text-main">
+                <text style="font-weight: 400;font-size: 35rpx;">204英语二考研大纲\n</text>
+                <text style="font-weight: 300;font-size: 30rpx;">更多资料,咨询助教获取</text>
+            </view>
+            <text class="showPdf {{pnum==4?route:''}}" bindtap="showPdf"  data-p="4">></text>
+                    <view class="more">  
+                        <text>管理类联考大纲</text>
+                        <button>解锁</button>
+                    </view>
+        </view>
+    
+    
+    
+    
+    
+    </view>
+
+</view>
